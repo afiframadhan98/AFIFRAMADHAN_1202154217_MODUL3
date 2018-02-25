@@ -9,17 +9,17 @@ import java.util.LinkedList;
 
 public class MainActivity extends AppCompatActivity {
 
-    private final LinkedList<String> mTitleList = new LinkedList<>();
-    private final LinkedList<String> mSubTitleList = new LinkedList<>();
-    private final LinkedList<Integer> mBackgroundList = new LinkedList<>();
-    private int mCount = 0;
-    private RecyclerView mRecyclerView;
-    private ListAdapter mAdapter;
+    private final LinkedList<String> mTitleList = new LinkedList<>();   // Mendeklarasikan LinkedList untuk menampung Title-tile
+    private final LinkedList<String> mSubTitleList = new LinkedList<>();    // Mendeklarasikan LinkedList untuk menampung Sub-Tile
+    private final LinkedList<Integer> mBackgroundList = new LinkedList<>(); // // Mendeklarasikan LinkedList untuk menampung Background
+
+    private RecyclerView mRecyclerView;     // Mendeklarasikan RecyclerView
+    private ListAdapter mAdapter;       // Mendeklarasikan ListAdapter
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main);     // Menjalankan content activity_main.xml
         setData();
         // Mendapatkan id RecyclerView
         mRecyclerView = (RecyclerView) findViewById(R.id.recyclerview);
@@ -33,7 +33,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setData(){
+        // Membuat String Array untuk menampung nama-nama merk air minum
         String brands[] = {"Ades","Amidis", "Aqua", "Cleo", "Club", "Equil", "Evian", "Leminerale", "Nestle", "Pristine", "Vit"};
+        // Melakukan assign nilai setiap String Array ke Tittle (LinkedList)
         for (String brand: brands) {
             mTitleList.addLast(brand);
             mSubTitleList.addLast("Ini adalah air minum merk " + brand);

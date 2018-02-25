@@ -17,9 +17,9 @@ public class DetailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
-        Intent intent = getIntent();
-        String Title = intent.getStringExtra("Title");
-        Integer Background = intent.getIntExtra("Background",0);
+        Intent intent = getIntent();                            // Mendapatkan Intent dari class ListAdapter
+        String Title = intent.getStringExtra("Title");      // Melakukan set Title
+        Integer Background = intent.getIntExtra("Background",0);    // Melakukan set Background
 
         title = (TextView)findViewById(R.id.detail_title);
         liter = (TextView)findViewById(R.id.Liter);
